@@ -8,7 +8,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class TestingViewModel @Inject constructor(private val repository: NetworkRepository): BaseViewModel<TestingModel>() {
+class TestingViewModel @Inject constructor(private val repository: NetworkRepository): BaseViewModel<TestingModel, String>() {
     override fun action() {
         print("Hallo")
         val resultTestingModel = TestingModel(

@@ -1,6 +1,6 @@
 package com.healby.utilities
 
-class Constans {
+class Constant {
 
     companion object {
         // implement all constant value below
