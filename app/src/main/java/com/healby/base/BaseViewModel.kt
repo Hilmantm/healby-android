@@ -5,11 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 
-abstract class BaseViewModel<T>: ViewModel() {
+abstract class BaseViewModel<T, M>: ViewModel() {
 
     protected val load: MutableLiveData<Boolean> = MutableLiveData(false)
     protected val result: MutableLiveData<BaseResponse<T>> = MutableLiveData()
-    protected val error: MutableLiveData<String> = MutableLiveData()
+    protected val error: MutableLiveData<M> = MutableLiveData()
 
     abstract fun action()
 
@@ -17,6 +17,6 @@ abstract class BaseViewModel<T>: ViewModel() {
 
     fun getResult(): LiveData<BaseResponse<T>> = result
 
-    fun getError(): LiveData<String> = error
+    fun getError(): LiveData<M> = error
 
 }
