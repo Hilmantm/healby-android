@@ -18,7 +18,7 @@ class Preferences(ctx: Context) {
     }
 
     fun getPreferenceFirstTimeInstall(): Boolean {
-        return preferences.getBoolean(FIRST_TIME_INSTALL, false)
+        return preferences.getBoolean(FIRST_TIME_INSTALL, true)
     }
 
 }

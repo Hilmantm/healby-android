@@ -1,10 +1,12 @@
 package com.healby.features.splashscreen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Toast
 import com.healby.R
+import com.healby.features.onboarding.OnboardingActivity
 import com.healby.utilities.Constant.Companion.SPLASHSCREEN_DELAY
 import com.healby.utilities.Preferences
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,10 +26,14 @@ class Splashscreen : AppCompatActivity() {
 
         Handler().postDelayed({
             if (firsTimeInstall) {
-                Toast.makeText(this@Splashscreen, "First Time Install", Toast.LENGTH_SHORT).show()
+                val intentToOnboarding = Intent(this@Splashscreen, OnboardingActivity::class.java)
+                startActivity(intentToOnboarding)
+                finish()
             } else {
-                Toast.makeText(this@Splashscreen, "Not First Time Install", Toast.LENGTH_SHORT).show()
-            }
+                // HAPUS KETIKA FITUR ONBOARDING SELESAI
+                val intentToOnboarding = Intent(this@Splashscreen, OnboardingActivity::class.java)
+                startActivity(intentToOnboarding)
+                finish()            }
         }, SPLASHSCREEN_DELAY)
     }
 }

@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Healby</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="onboarding_title_1">Selamat Datang Di Healby</string>
+    <string name="onboarding_desc_1">Dapatkan kemudahan dalam pemantauan bayi dan pencegahan stunting melalui helby</string>
+
+    <string name="onboarding_title_2">Monitor Tumbuh Kembang Bayi</string>
+    <string name="onboarding_desc_2">Monitor Tumbuh Kembang Bayi Anda Dengan Mudah Melalui Grafik Perkembangan</string>
+    
+    <string name="onboarding_title_3">Konsultasi Dengan BabyBot</string>
+    <string name="onboarding_desc_3">Konsultasikan Keluhan Perkembangan Bayi Anda Melalui Fitur BabyBot</string>
+    <string name="skip">Skip</string>
+    <string name="selanjutnya">Selanjutnya</string>
+    <string name="mulai_sekarang">Mulai Sekarang</string>
+
 </resources>

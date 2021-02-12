@@ -8,6 +8,8 @@ class Constant {
         const val DATABASE_VERSION = 1
 
         const val SPLASHSCREEN_DELAY = 1000L
+
+        const val POSITION = "POSITION"
     }
 
 }
