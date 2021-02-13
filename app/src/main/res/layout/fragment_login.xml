@@ -47,6 +47,7 @@
         style="@style/Authentication_Form_Title"/>
 
     <include
+        android:id="@+id/fragment_login_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/password_authentication_form"
