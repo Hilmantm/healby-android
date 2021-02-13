@@ -42,7 +42,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun observeViewModel() {
-        loginFragmentViewModel.getPasswordVisibility().observe(viewLifecycleOwner, Observer { visible ->
+        loginFragmentViewModel.getPasswordVisibility().observe(viewLifecycleOwner, { visible ->
             if(visible) {
                 Glide
                     .with(binding.fragmentLoginPassword.authenticationPasswordVisibilityImageview.context)
@@ -56,7 +56,7 @@ class LoginFragment : Fragment() {
                     .into(binding.fragmentLoginPassword.authenticationPasswordVisibilityImageview)
                 binding.fragmentLoginPassword.authenticationPasswordEdittext.transformationMethod = PasswordTransformationMethod.getInstance()
             }
-            binding.fragmentLoginPassword.authenticationPasswordEdittext.setSelection(binding.fragmentLoginEmailEdittext.text.length)
+            binding.fragmentLoginPassword.authenticationPasswordEdittext.setSelection(binding.fragmentLoginPassword.authenticationPasswordEdittext.text.length)
         })
     }
 }
