@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/main_padding"
+    tools:context=".features.authentication.LoginFragment">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/healby_logo"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/masuk_akun"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        style="@style/Authentication_Form_Title"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/fragment_login_email_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="@string/masukkan_email_kamu"
+        style="@style/Authentication_Form"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kata_sandi"
+        android:layout_marginTop="22dp"
+        style="@style/Authentication_Form_Title"/>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/password_authentication_form"
+        android:layout_marginTop="22dp" />
+
+    <Button
+        android:id="@+id/fragment_login_masuk_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/masuk"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="40dp"/>
+
+    <!-- Button Google Register -->
+
+    <!-- ###################### -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/belum_punya_akun"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/fragment_login_register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/daftar_disini"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:textColor="@color/primary_dark"
+        android:textStyle="bold"/>
+
+</LinearLayout>
