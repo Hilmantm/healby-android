@@ -1,5 +1,6 @@
 package com.healby.features.onboarding
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,7 @@ import com.healby.R
 import com.healby.adapter.ONBOARDING_TOTAL_ITEM
 import com.healby.adapter.OnboardingAdapter
 import com.healby.databinding.ActivityOnboardingBinding
+import com.healby.features.authentication.AuthenticationActivity
 import com.healby.utilities.Preferences
 import com.healby.viewmodel.OnboardingViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -64,6 +66,12 @@ class OnboardingActivity : AppCompatActivity() {
 
         binding.onboardingSkipBtn.setOnClickListener {
             binding.onboardingViewpager.currentItem = ONBOARDING_TOTAL_ITEM
+        }
+
+        binding.onboardingStartBtn.setOnClickListener {
+            val intentToAuthenticationActivity = Intent(this@OnboardingActivity, AuthenticationActivity::class.java)
+            startActivity(intentToAuthenticationActivity)
+            finish()
         }
     }
 }
