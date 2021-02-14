@@ -1,5 +1,6 @@
 package com.healby.features.authentication
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
@@ -42,19 +44,17 @@ class RegisterFragment : Fragment() {
     private fun observeViewModel() {
         registerViewModel.getPasswordVisibility().observe(viewLifecycleOwner, { visible ->
             if(visible) {
-                Glide
-                        .with(binding.fragmentRegisterPassword.authenticationPasswordVisibilityImageview.context)
-                        .load(ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_visibility_off_24))
-                        .into(binding.fragmentRegisterPassword.authenticationPasswordVisibilityImageview)
                 binding.fragmentRegisterPassword.authenticationPasswordEdittext.transformationMethod = HideReturnsTransformationMethod.getInstance()
             } else {
-                Glide
-                        .with(binding.fragmentRegisterPassword.authenticationPasswordVisibilityImageview.context)
-                        .load(ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_visibility_24))
-                        .into(binding.fragmentRegisterPassword.authenticationPasswordVisibilityImageview)
                 binding.fragmentRegisterPassword.authenticationPasswordEdittext.transformationMethod = PasswordTransformationMethod.getInstance()
             }
+            setPasswordVisibilityIcon(binding.fragmentRegisterPassword.authenticationPasswordVisibilityImageview, visible)
             binding.fragmentRegisterPassword.authenticationPasswordEdittext.setSelection(binding.fragmentRegisterPassword.authenticationPasswordEdittext.text.length)
         })
+    }
+
+    private fun setPasswordVisibilityIcon(image: ImageView, visible: Boolean) {
+        val visibilityIcon = if(visible) ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_visibility_off_24) else ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_visibility_24)
+        Glide.with(image.context).load(visibilityIcon).into(image)
     }
 }

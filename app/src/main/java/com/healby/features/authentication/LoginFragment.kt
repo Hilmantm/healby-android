@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -44,19 +45,17 @@ class LoginFragment : Fragment() {
     private fun observeViewModel() {
         loginFragmentViewModel.getPasswordVisibility().observe(viewLifecycleOwner, { visible ->
             if(visible) {
-                Glide
-                    .with(binding.fragmentLoginPassword.authenticationPasswordVisibilityImageview.context)
-                    .load(ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_visibility_off_24))
-                    .into(binding.fragmentLoginPassword.authenticationPasswordVisibilityImageview)
                 binding.fragmentLoginPassword.authenticationPasswordEdittext.transformationMethod = HideReturnsTransformationMethod.getInstance()
             } else {
-                Glide
-                    .with(binding.fragmentLoginPassword.authenticationPasswordVisibilityImageview.context)
-                    .load(ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_visibility_24))
-                    .into(binding.fragmentLoginPassword.authenticationPasswordVisibilityImageview)
                 binding.fragmentLoginPassword.authenticationPasswordEdittext.transformationMethod = PasswordTransformationMethod.getInstance()
             }
+            setPasswordVisibilityIcon(binding.fragmentLoginPassword.authenticationPasswordVisibilityImageview, visible)
             binding.fragmentLoginPassword.authenticationPasswordEdittext.setSelection(binding.fragmentLoginPassword.authenticationPasswordEdittext.text.length)
         })
+    }
+
+    private fun setPasswordVisibilityIcon(image: ImageView, visible: Boolean) {
+        val visibilityIcon = if(visible) ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_visibility_off_24) else ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_visibility_24)
+        Glide.with(image.context).load(visibilityIcon).into(image)
     }
 }
