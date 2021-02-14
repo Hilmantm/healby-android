@@ -28,5 +28,9 @@
     <string name="masuk">Masuk</string>
     <string name="belum_punya_akun">Belum punya akun?</string>
     <string name="daftar_disini">Daftar Disini</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>
