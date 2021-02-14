@@ -3,23 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
+    app:startDestination="@id/navigation_beranda">
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.healby.features.main.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/navigation_beranda"
+        android:name="com.healby.features.main.beranda.BerandaFragment"
+        android:label="fragment_beranda"
+        tools:layout="@layout/fragment_beranda" />
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.healby.features.main.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
+        android:id="@+id/navigation_artikel"
+        android:name="com.healby.features.main.artikel.ArtikelFragment"
+        android:label="fragment_artikel"
+        tools:layout="@layout/fragment_artikel" />
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.healby.features.main.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_posyandu"
+        android:name="com.healby.features.main.posyandu.PosyanduFragment"
+        android:label="fragment_posyandu"
+        tools:layout="@layout/fragment_posyandu" />
+    <fragment
+        android:id="@+id/navigation_babybot"
+        android:name="com.healby.features.main.babybot.BabybotFragment"
+        android:label="fragment_babybot"
+        tools:layout="@layout/fragment_babybot" />
 </navigation>
